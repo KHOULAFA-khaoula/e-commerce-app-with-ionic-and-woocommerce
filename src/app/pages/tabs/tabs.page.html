@@ -1,0 +1,35 @@
+
+<ion-content>
+<ion-tabs>
+  <ion-tab-bar slot="bottom"> 
+
+        <ion-tab-button (click)="onClickShop()" tab="home">
+            <ion-icon [name]="shop ? 'storefront' : 'storefront-outline'"></ion-icon>
+            <ion-label>Store</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="onClickCategories()" tab="categories" >
+          <ion-icon [name]="category ? 'apps' : 'apps-outline'"></ion-icon>
+          <ion-label>Categories</ion-label>
+      </ion-tab-button>
+  
+
+      <ion-tab-button (click)="onClickFavorite()" tab="favorites">
+        <ion-icon [name]="favorite ? 'heart' : 'heart-outline' "></ion-icon>
+        <ion-badge    color="danger">{{favItems  | async}}</ion-badge>
+        <ion-label>Favorites</ion-label>
+    </ion-tab-button>
+
+
+        <ion-tab-button (click)="onClickCart()" tab="cart">
+          <ion-icon [name]="cart ? 'cart' : 'cart-outline' "></ion-icon>
+          <ion-badge    color="danger">{{cartItems  | async}}</ion-badge>
+          <ion-label>Cart</ion-label>
+      </ion-tab-button>
+
+     
+     
+
+  </ion-tab-bar>
+</ion-tabs>
+</ion-content>

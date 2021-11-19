@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+   </ion-buttons>
+    
+   
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="head-title">
+    <h2 >SIGN UP</h2>
+  </div>
+  <form [formGroup]="registerForm" (ngSubmit)="onSignUp()" >
+    <div class="input-group">
+
+    
+    <ion-item lines="full">
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text"
+                  formControlName="username"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" 
+                 inputmode="email"
+                  formControlName="email"></ion-input>
+    </ion-item>
+  
+    <ion-item lines="full">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" 
+                    formControlName="password"></ion-input>
+      </ion-item>
+
+    </div>
+      
+          <ion-button type="submit" [disabled]="!registerForm.valid" color="primary" expand="block">Sign Up</ion-button>
+         
+         
+           <ion-button class="clear_button" type="button" expand="block" color="primary">
+              <ion-icon name="logo-google" slot="start"></ion-icon>
+               Sign up with Google
+           </ion-button>   
+       
+  </form>
+  
+
+</ion-content>

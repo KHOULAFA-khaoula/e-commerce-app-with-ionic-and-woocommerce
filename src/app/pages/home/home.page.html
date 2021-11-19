@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+       <ion-button (click)="onShowSearch()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+       </ion-button>
+       
+    </ion-buttons>
+
+    <ion-title  size="large" >
+      Store
+    </ion-title>
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+ <ion-grid>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size-lg="3" size-sm="4" size-xs="6"
+             *ngFor="let product of productList">
+      <ion-card >
+
+       <img class="image--size" [src]="product?.image" (click)="onShowThisProduct(product)"> 
+
+        <ion-card-header > {{product?.name}}  </ion-card-header>
+        <ion-card-title>
+              <div [id]="product?.sale_price ? 'striked' : 'regular_price' "  > {{product.regular_price}} $ </div>
+              <!--The regular price is displayed only if it is specified in woocommerce-->
+              <div *ngIf="product.sale_price" id="sale_price" > {{ product.sale_price }}$ </div> 
+         </ion-card-title>
+      <!-- <ion-card-content [innerHtml]="product.description"> </ion-card-content> -->  
+      
+      <ion-card-content >
+         
+            <ion-button fill="clear" expand="block" (click)="onAddToCart(product)">
+              <ion-icon name="cart" ></ion-icon>
+            </ion-button>
+            <ion-button fill="clear" expand="block" (click)="onToggleFavorite(product)">
+              <ion-icon slot="icon-only" [name]=" product.isFavorite ? 'heart' : 'heart-outline'" ></ion-icon>
+            </ion-button>
+            
+         
+        </ion-card-content>
+       
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+  
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    
+    <ion-buttons slot="end">
+      <ion-button (click)="onShowSearch()">
+       <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      
+   </ion-buttons>
+
+   <ion-title id="center" size="large" >
+     Categories
+   </ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item button=true *ngFor="let category of categoriesList" (click)="onClickCategory(category.id,category.name)">
+         {{ category.name}}
+    </ion-item>
+  </ion-list>
+</ion-content>

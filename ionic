@@ -1,0 +1,48 @@
+Checking Java JDK and Android SDK versions
+ANDROID_SDK_ROOT=C:\Users\hp\AppData\Local\Android\Sdk (recommended setting)
+ANDROID_HOME=C:\Users\hp\AppData\Local\Android\Sdk (DEPRECATED)
+Using Android SDK: C:\Users\hp\AppData\Local\Android\Sdk
+Subproject Path: CordovaLib
+Subproject Path: app
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :CordovaLib:preBuild UP-TO-DATE
+> Task :CordovaLib:preDebugBuild UP-TO-DATE
+> Task :CordovaLib:compileDebugAidl NO-SOURCE
+> Task :app:compileDebugAidl NO-SOURCE
+> Task :CordovaLib:packageDebugRenderscript NO-SOURCE
+> Task :app:compileDebugRenderscript NO-SOURCE
+> Task :app:generateDebugBuildConfig
+> Task :app:generateDebugResValues
+> Task :app:generateDebugResources
+> Task :CordovaLib:compileDebugRenderscript
+> Task :CordovaLib:generateDebugResValues
+> Task :CordovaLib:generateDebugResources
+> Task :CordovaLib:packageDebugResources
+> Task :app:javaPreCompileDebug
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:mergeDebugResources
+> Task :app:extractDeepLinksDebug
+> Task :CordovaLib:extractDeepLinksDebug
+> Task :CordovaLib:compileDebugLibraryResources
+> Task :CordovaLib:processDebugManifest
+> Task :app:processDebugManifest
+> Task :CordovaLib:parseDebugLocalResources
+> Task :CordovaLib:generateDebugBuildConfig
+> Task :CordovaLib:javaPreCompileDebug
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :CordovaLib:generateDebugRFile
+> Task :app:processDebugResources
+> Task :CordovaLib:compileDebugJavaWithJavac
+> Task :CordovaLib:mergeDebugShaders
+> Task :CordovaLib:compileDebugShaders NO-SOURCE
+> Task :CordovaLib:generateDebugAssets UP-TO-DATE
+> Task :CordovaLib:packageDebugAssets
+> Task :CordovaLib:bundleLibCompileToJarDebug
+
+> Task :app:compileDebugJavaWithJavac
+
+> Task :app:compileDebugSources
+> Task :app:mergeDebugAssets

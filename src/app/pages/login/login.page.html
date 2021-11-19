@@ -1,0 +1,37 @@
+
+
+
+<ion-content class="ion-padding">
+  <div class="head-title">
+    <h2 >SIGN IN</h2>
+  </div>
+  
+  <form [formGroup]="authForm" (ngSubmit)="onSignIn()" >
+     <div class="input-group">
+      <ion-item lines="full">
+        <ion-label position="floating">Username</ion-label>
+        <ion-input type="text"
+                    formControlName="username"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" 
+                      formControlName="password"></ion-input>
+      </ion-item>
+    
+
+     </div>
+
+      
+      <ion-button type="submit" [disabled]="!authForm.valid" color="primary" expand="block">Sign In</ion-button>
+      <ion-button type="button" expand="block" color="light" fill="clear" (click)="onMoveRegister()">Not yet a member? Sign up!
+      </ion-button>
+      <a  color="#fff"[routerLink]="['/forgot-password']" class small-text>Forgot Password</a>
+       <ion-button type="button" expand="block" color="primary">
+          <ion-icon name="logo-google" slot="start"></ion-icon>
+           Sign in with Google
+       </ion-button>   
+  </form>
+  
+ 
+</ion-content>

@@ -1,0 +1,14 @@
+{
+  "name": "second-wordpress-test",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+
+  "proxies": [
+    {
+      "path": "/localhost",
+      "proxyUrl": "http://localhost/wordpress/wp-json/jwt-auth/v1/token"
+    }
+  ]
+}
