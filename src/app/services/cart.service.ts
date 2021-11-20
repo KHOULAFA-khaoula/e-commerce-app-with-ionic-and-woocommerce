@@ -12,6 +12,7 @@ export class CartService {
   CoCart: any;
   cartItems = new BehaviorSubject(0);
   cart :Product[] = [];
+  total = new BehaviorSubject(0) ;
 
 
   constructor() {
@@ -25,13 +26,14 @@ export class CartService {
    }
 
 
-  addProductToCart( product){
+  addProductToCart( product : Product){
     var data = {
       id:product.id,
       quantity:product.quantity,
   }
 
     product.quantity = product.quantity + 1 
+    this.total.next(this.total.value + Number(product.regular_price)) ;
 
     if(!this.cart.includes(product)) {
       this.cartItems.next(this.cartItems.value + 1);
@@ -44,13 +46,14 @@ export class CartService {
    // return this.CoCart.get("cart")
   }
 
-  onDeleteItem(item) {
+  onDeleteItem(item : Product) {
     let index = this.cart.indexOf(item); 
 
     if(index > -1){
       this.cart.splice(index, 1);
     }
     this.cartItems.next(this.cartItems.value - 1 )
+    this.total.next(this.total.value - Number(item.regular_price) * item.quantity);
     console.log("the nex cart contains :  " ,this.cart)
   }
 }

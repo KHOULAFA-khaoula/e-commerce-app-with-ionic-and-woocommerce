@@ -26,11 +26,15 @@
 
   <ion-list >
     <ion-item *ngFor="let item of cart">
-      {{ item.name }}     {{item.quantity}}
+      {{ item.name }}                  X{{item.quantity}}
       <ion-button  slot="end" fill="clear" (click)="onDeleteProduct(item)">
         <ion-icon name="close-outline" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>
+  <div  *ngIf="items.value"> Total 
+    {{ total | async}} $
+  </div>
+
 
 </ion-content>

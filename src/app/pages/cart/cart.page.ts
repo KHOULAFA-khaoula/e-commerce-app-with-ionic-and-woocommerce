@@ -9,9 +9,10 @@ import { CommonSearchPage } from '../common-search/common-search.page';
   styleUrls: ['./cart.page.scss'],
 })
 export class CartPage implements OnInit {
-
+  
   cart = [] 
   items;
+  total 
   constructor(private modalController: ModalController,
               private alertController: AlertController,
               private cartService : CartService) { }
@@ -20,6 +21,7 @@ export class CartPage implements OnInit {
     console.log("this cart page ")
     this.cart = this.cartService.cart
     this.items =  this.cartService.cartItems
+    this.total = this.cartService.total;
     console.log("items in cart are : >> ",this.cart)
     
   }
